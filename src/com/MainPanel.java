@@ -37,8 +37,8 @@ public class MainPanel extends JPanel {
         JPanel customerHeader = new JPanel(new GridLayout(1, 3));
             JPanel selCust = new JPanel();
             JPanel custBut = new JPanel(); 
-        JPanel customerMeta = new JPanel(); 
-        JPanel customerBody = new JPanel();
+        JPanel customerMeta = new JPanel(new GridLayout(2, 0)); 
+        JPanel customerBody = new JPanel(new GridLayout(1, 2));
         JPanel filter = new JPanel();
         JPanel preferences = new JPanel();
         JPanel personal = new JPanel();
@@ -120,6 +120,83 @@ public class MainPanel extends JPanel {
         primaryDestList.setSelectedIndex(0);
         JComboBox secDestList = new JComboBox<>(dest);
         secDestList.setSelectedIndex(1);
+
+        JComboBox bdayList = new JComboBox<>();
+
+
+
+        // =================================================================== //
+        /** customerHeader Panel */
+        // selCust Panel
+        selCust.add(custHeader);
+        selCust.add(custBox);
+
+        // Filter Panel 
+        filter.setBorder(BorderFactory.createTitledBorder("Filter"));
+        filter.add(custButton);        
+        filter.add(tripButton);        
+        filter.add(contButton);     
+        
+        // custBut Panel
+        custBut.add(newCust);
+        custBut.add(saveCust);
+
+        // Add components to the customerHeader Panel
+        customerHeader.add(selCust);
+        customerHeader.add(filter);
+        customerHeader.add(custBut);
+        
+
+
+        // =================================================================== //
+        /** customer Meta */
+        customerMeta.add(title);
+        customerMeta.add(getTitleField);
+        customerMeta.add(f_name); 
+        customerMeta.add(getFnameField);
+        customerMeta.add(l_name);
+        customerMeta.add(getLnameField);
+        customerMeta.add(custType);
+        customerMeta.add(custTypeList);
+
+
+
+        // =================================================================== //
+        /** customer Body */
+        // Preferences
+        preferences.setBorder(BorderFactory.createTitledBorder("Preferences"));
+        preferences.add(primAct);
+        preferences.add(primaryActList);
+        preferences.add(secAct);
+        preferences.add(secActList);
+        preferences.add(primDest);
+        preferences.add(primaryDestList);
+        preferences.add(secDest);
+        preferences.add(secDestList);
+
+        // Personal
+        personal.setBorder(BorderFactory.createTitledBorder("Personal"));
+        personal.add(bday); 
+        personal.add(bdayList);
+        personal.add(diet);
+        personal.add(getDiet);
+        personal.add(height);
+        personal.add(getHeightField);
+        personal.add(weight);
+        personal.add(getWeightField);
+
+
+
+        // Add to customer body
+        customerBody.add(preferences);
+        customerBody.add(personal);
+
+        // =================================================================== //
+        /** Main Panel */
+        // Add Panels to the main panel
+        add(customerHeader); 
+        add(customerMeta);
+        add(customerBody);
 
     }
 
