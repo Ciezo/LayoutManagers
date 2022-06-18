@@ -35,7 +35,13 @@ public class customerMeta extends JPanel {
         getlnamefield.setPreferredSize(new Dimension(200, 20)); 
 
         // Customer List
-        custList = new JComboBox<>();
+        String[] cType = {
+            "Standard",
+            "Economy",
+            "Luxury",
+            "Private"
+        };
+        custList = new JComboBox<>(cType);
         custList.setPreferredSize(new Dimension(150, 20));
 
         // Panels
