@@ -26,7 +26,7 @@ public class WindowActivity extends JFrame {
     // Constructor 
     public WindowActivity() {
         super("Form1");                                  // set the title of the window 
-        setSize(new Dimension(900, 620));        // set the size
+        setSize(new Dimension(900, 405));        // set the size
         // setResizable(false);                                // not resizable
         setLocationRelativeTo(null);                        // make it appear on the center of the screen
         add(mainpanel);
